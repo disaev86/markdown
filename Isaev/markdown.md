@@ -20,12 +20,12 @@
 #### 2.1
 
 Таблица Animals состоит из следущих атрибутов:
-	* id - создается по умолчанию, INT
-	* id_feeding - айди к таблице Feeding, INT
-	* id_room - айди к таблице Room, INT
-	* id_examination - айди к таблице Medical_examination, INT
-	* name_animal - название животного, VARCHAR(30)
-	* type_of_animal - тип животного, VARCHAR(30)
+* id - создается по умолчанию, INT
+* id_feeding - айди к таблице Feeding, INT
+* id_room - айди к таблице Room, INT
+* id_examination - айди к таблице Medical_examination, INT
+* name_animal - название животного, VARCHAR(30)
+* type_of_animal - тип животного, VARCHAR(30)
 
 ![](screens/Animals1.png)
 
