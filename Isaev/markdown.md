@@ -81,12 +81,122 @@ SELECT type_of_animal AS Название_и_тип_животного
 FROM Animals
 ```
 
+### Результат:
 ![](screens/union.png)
+
+Вывелся один запрос, состоящий из двух запросов
 
 
 # 4. Демонстрация работы функции ORDER BY
 
 Сортировка полученных строк
+Я отсортировал вес животных
+
+### По возрастанию:
+
+```
+SELECT
+	name_animal,
+	weight
+FROM Animals
+JOIN Medical_examination
+	ON Animals.id_examination = Medical_examination.id
+ORDER BY weight
+```
+![](screens/orderby1.png)
+
+Вывелась таблица, отсортированная по возрастанию веса
+
+
+### По убыванию:
+
+```
+SELECT
+	name_animal,
+	weight
+FROM Animals
+JOIN Medical_examination
+	ON Animals.id_examination = Medical_examination.id
+ORDER BY weight DESC
+```
+
+![](screens/orderby2.png)
+
+Вывелась таблица, отсортированная по убыванию веса
+
+
+### По алфавиту:
+
+```
+SELECT
+	name_animal,
+	weight
+FROM Animals
+JOIN Medical_examination
+	ON Animals.id_examination = Medical_examination.id
+ORDER BY name_animal
+```
+
+![](screens/orderby3.png)
+
+Вывелась таблица, отсортированная по возрастанию алфавита
+
+### В обратном алфавитном порядке:
+
+```
+SELECT
+	name_animal,
+	weight
+FROM Animals
+JOIN Medical_examination
+	ON Animals.id_examination = Medical_examination.id
+ORDER BY name_animal DESC
+```
+
+![](screens/orderby4.png)
+
+Вывелась таблица, отсортированная в обратном порядке алфавита
+
+
+# 5. Демонстрация работы функции HAVING
+
+Получение данных из таблицы базы, соответствующих определённым значениям результатов
+Я вывел имя животных у которых вес больше 200 кг
+
+```
+SELECT
+	name_animal,
+	weight
+FROM Animals
+JOIN Medical_examination
+	ON Animals.id_examination = Medical_examination.id
+GROUP BY name_animal
+HAVING weight > 200
+```
+
+![](screens/having.png)
+
+Вывелась таблица с животными, у которых вес больше двухсот килограмм
+
+
+# 6. Демонстрация работы вложенных запросов
+
+## 6.1 В SELECT
+
+Хочу вывести количество привитых животных и имя животных в одном запросе
+Для этого будем использовать вложенный запрос
+
+```
+SELECT 
+	name_animal, 
+        (SELECT COUNT(*) FROM Medical_examination WHERE vaccinations LIKE 'yes') AS количество_привитых_животных
+FROM Animals 
+JOIN Medical_examination
+	ON Animals.id_examination = Medical_examination.id
+```
+
+![](screens/attached_request)
+
 
 	
 		
