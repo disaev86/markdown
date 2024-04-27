@@ -1,8 +1,8 @@
-## 1.
+# 1. ФИО, группа
  
   Исаев Динислам Абдулмуталимович, ИС 22/9-1
 
-## 2.
+# 2. Описание БД
 
 Моя база данных про зоопарк
 База данных имеет 5 таблиц
@@ -19,7 +19,7 @@
 
 #### 2.1
 
-Таблица Animals состоит из следущих атрибутов:
+###### Таблица Animals состоит из следущих атрибутов:
 * id - создается по умолчанию, INT
 * id_feeding - айди к таблице Feeding, INT
 * id_room - айди к таблице Room, INT
@@ -32,7 +32,7 @@
 ![](screens/Animals2.png)
 
 
-Таблица Employees состоит из следущих атрибутов:
+###### Таблица Employees состоит из следущих атрибутов:
 * id - создается по умолчанию, INT
 * post - должность сотрудника, VARCHAR(30)
 
@@ -40,7 +40,7 @@
 ![](screens/Employees2.png)
 
 
-Таблица Feeding состоит из следущих атрибутов:
+###### Таблица Feeding состоит из следущих атрибутов:
 * id - создается по умолчанию, INT
 * feeding_time - время кормления животных, TIME
 * type_of_feed - тип корма, VARCHAR(30)
@@ -49,7 +49,7 @@
 ![](screens/feeding2.png)
 
 
-Таблица Medical_examination из следущих атрибутов:
+###### Таблица Medical_examination из следущих атрибутов:
 * id - создается по умолчанию, INT
 * weight - вес животного, DECIMAL(6,2)
 * height - рост животного, DECIMAL(6,2)
@@ -58,12 +58,30 @@
 ![](screens/medical1.png)
 ![](screens/medical2.png)
 
-Таблица Room состоит из следущих атрибутов:
+###### Таблица Room состоит из следущих атрибутов:
 * id - создается по умолчанию, INT
 * id_employees - айди к таблице Employees
 
 ![](screens/room1.png)
 ![](screens/room2.png)	
+
+
+# 3. демонстрация работы функции UNION
+
+Объединения двух наборов строк. 
+Я объединил name_animal из таблицы Animals с type_of_animal с той же таблицы
+
+```
+SELECT name_animal AS Название_и_тип_животного
+FROM Animals
+
+UNION
+
+SELECT type_of_animal AS Название_и_тип_животного
+FROM Animals
+```
+
+![](screens/union.png)
 	
 		
 	
