@@ -184,7 +184,7 @@ HAVING weight > 200
 ## 6.1 В SELECT
 
 Хочу вывести количество привитых животных и имя животных в одном запросе
-Для этого будем использовать вложенный запрос
+Для этого будем использовать вложенный запрос внутри SELECT
 
 ```
 SELECT 
@@ -195,7 +195,31 @@ JOIN Medical_examination
 	ON Animals.id_examination = Medical_examination.id
 ```
 
-![](screens/attached_request)
+![](screens/attached_request.png)
+
+Вывелась таблица с количеством привитых животных с помощью вложенного запроса
+
+## 6.2 В WHERE
+
+Хочу вывести имя животного с минимальным весом
+Для этого будем использовать вложенный запрос внутри WHERE
+
+```
+SELECT 
+	name_animal,
+    height
+FROM Animals
+JOIN Medical_examination
+	ON Animals.id_examination = Medical_examination.id
+WHERE height LIKE (SELECT MIN(height) FROM Medical_examination)
+```
+
+![](screens/attached_request2.png)
+
+Вывелась таблица с именем животного, имеющий минимальный вес
+
+
+## 7. 
 
 
 	
