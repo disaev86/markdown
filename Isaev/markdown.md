@@ -48,7 +48,7 @@
 ![](screens/feeding1.png)
 ![](screens/feeding2.png)
 
-
+fdsfsdfsdf
 Таблица Medical_examination из следущих атрибутов:
 	id - создается по умолчанию, INT
 	weight - вес животного, DECIMAL(6,2)
